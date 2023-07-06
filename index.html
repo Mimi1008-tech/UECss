@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UECss</title>
+    <title>UEC Dashboard Info</title>
 
     <link rel="stylesheet" href="./UECss/UECss.css" />
     <link rel="stylesheet" href="./UECss/highlight/styles/github-dark-dimmed.min.css">
@@ -12,12 +12,11 @@
   <body>
     <header class="header">
       <nav class="navbar dark">
-        <div class="navbar-left"><img src="./icon.jpg" alt="" class="br-small"></div>
+        <div class="navbar-left"><img src="./header-logo.png" alt="" class=""></div>
         <div class="navbar-right">
           <ul>
             <li><a href="">Top</a></li>
-            <li><a href="">About Me</a></li>
-            <li><a href="">Develop</a></li>
+            <li><a href="">UEC Dashboard</a></li>
             <li><a href="">Contact</a></li>
           </ul>
         </div>
@@ -26,131 +25,93 @@
     <main class="main container">
       <section>
         <h1 class="title t-center">Top</h1>
-        <h2>About me</h2>
+        <h2>UEC Dashboard</h2>
+        <div class="alert alert-primary">この記事は電気通信大学のコンピュータリテラシーの課題で書かれたものです。</div>
+        <h3>開発の経緯</h3>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-          ratione deleniti tempora excepturi hic qui ipsum placeat aperiam
-          provident quo aspernatur ut velit similique autem quia saepe,
-          consequuntur maiores minima.
+          電気通信大学には数多くのe-ラーニングシステム散財しており、また、様々な情報が様々なフィールドで発信されるため、学生個人にとっては、どの情報がどの場所で見られるのか、また、その場所にはどうやってアクセスするのかがわかりにくい状態だった。
+          そこで、電気通信大学のすべてのe-ラーニングシステムのリンク等を一つにまとめることでこれらの問題を解決するべく、このUEC DashboardというWebアプリケーションを開発した。
+        </p>
+        <h3>開発技術など</h3>
+        <p>
+          開発言語はHTML/CSSであり、開発期間は約2日である。開発は個人で行い、細かい機能のアップデートやバグの修正などを同級生、上級生を含めた4人程度で行った。このアプリケーションはPWAとしてスマホでネイティブアプリケーションのように使用することも可能である。
+        </p>
+        <h3>実際のサービス</h3>
+        <p>
+          実際に以下のボタンからアクセスすることができる。
         </p>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-          ratione deleniti tempora excepturi hic qui ipsum placeat aperiam
-          provident quo aspernatur ut velit similique autem quia saepe,
-          consequuntur maiores minima.
-        </p>
-          <img src="./icon.jpg" alt="">
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-          ratione deleniti tempora excepturi hic qui ipsum placeat aperiam
-          provident quo aspernatur ut velit similique autem quia saepe,
-          consequuntur maiores minima.
+          <a href="https://dashboard.uec-tech.net/" class="btn btn-primary">UEC Dashboardにアクセス</a>
         </p>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-          ratione deleniti tempora excepturi hic qui ipsum placeat aperiam
-          provident quo aspernatur ut velit similique autem quia saepe,
-          consequuntur maiores minima.
+          アクセスすると以下のようなサイトが表示され、電気通信大学のe-ラーニングシステムにアクセスすることが可能となる。設定画面から、ライトモードとダークモードを変更することができる。
         </p>
-        <button class="btn btn-primary">This is button.</button>
-        <h2>Develop</h2>
+          <img src="./uec-dashboard-dark.png" alt="">
+          <h3>カスタマイズ方法</h3>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-          ratione deleniti tempora excepturi hic qui ipsum placeat aperiam
-          provident quo aspernatur ut velit similique autem quia saepe,
-          consequuntur maiores minima.
+          また、カスタムCSSを適応することも可能である。以下のコードをStylusなどのブラウザ拡張機能でこのページに適応することで好きな背景画像を適応することができる。
         </p>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-          ratione deleniti tempora excepturi hic qui ipsum placeat aperiam
-          provident quo aspernatur ut velit similique autem quia saepe,
-          consequuntur maiores minima.
+        <div class="alert alert-warning">あくまで個人的な範囲の利用でお願い致します</div>
+
+<pre class="code"><span>custom.css</span><code class="css">html{
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('ここに画像のURLを入れる');
+    background-position: left;
+    background-size: cover;
+    background-attachment: fixed;
+}
 
 
-<pre class="code"><span>sample.c</span><code class="c">#include &lt;stdio.h&gt;  
-int main(void){
-  print(&quotHello World!\n&quot);
-  return 0;
+*{
+    color: #fff;
+    border-color: #fff !important;
+}
+
+#header, #main, #footer{
+    background-color: transparent;
+}
+
+#search #search_input{
+    border: none;
+    
+    transition: .3s ease-in-out background-color;
+}
+
+#search #search_input:focus-visible{
+    border: none;
+    background-color: rgba(200, 200, 200, .3) !important;
+}
+
+#search #search_icon{
+    color: #fff !important;
+}
+
+.app:hover{
+    background-color: rgba(200, 200, 200, .3) !important;
+}
+
+#other_files ul, #other_files ul li a{
+    border: none;
+}
+
+#other_files ul li a{
+    border-radius: 5px;
+}
+
+#other_files ul li a:hover{
+    background-color: rgba(200, 200, 200, .3) !important;
+}
+
+#openBtn{
+    display: none !important;
 }
 </code></pre
             >
-        </p>
+            <p>実際に表示してみると以下のように表示される。現在開発者は、アニメ、「アイドルマスター シンデレラガールズ U149」の画像を背景画像に設定している。</p>
+        <img src="./uec-dashboard-background-img.png" alt="">
+        <h3>今後の展望</h3>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-          ratione deleniti tempora excepturi hic qui ipsum placeat aperiam
-          provident quo aspernatur ut velit similique autem quia saepe,
-          consequuntur maiores minima.
+          今後、このサービスをもっと大きなものにしていこうと考えている。学生個人個人にカスタマイズされた時間割や、課題の提出用リマインダーなどの新機能を追加し、より多くの人に使っていただきたいと考えている。
         </p>
-        <button class="btn btn-primary">This is button.</button>
-        <h2>About me</h2>
-        <a href="/index.html" class="card">
-          <div class="card-img"><img src="./icon.jpg" alt=""></div>
-          <div class="card-header">Card Title</div>
-          <div class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
-        </a>
-        <a href="/index.html" class="card">
-          <div class="card-img"><img src="./icon.jpg" alt=""></div>
-          <div class="card-header">Card Title</div>
-          <div class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
-        </a>
-        <a href="/index.html" class="card">
-          <div class="card-img"><img src="./icon.jpg" alt=""></div>
-          <div class="card-header">Card Title</div>
-          <div class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
-        </a>
-        <a href="/index.html" class="card">
-          <div class="card-img"><img src="./icon.jpg" alt=""></div>
-          <div class="card-header">Card Title</div>
-          <div class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
-        </a>
-        <a href="/index.html" class="card">
-          <div class="card-img"><img src="./icon.jpg" alt=""></div>
-          <div class="card-header">Card Title</div>
-          <div class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
-        </a>
-        <a href="/index.html" class="card">
-          <div class="card-img"><img src="./icon.jpg" alt=""></div>
-          <div class="card-header">Card Title</div>
-          <div class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
-        </a>
-        <a href="/index.html" class="card">
-          <div class="card-img"><img src="./icon.jpg" alt=""></div>
-          <div class="card-header">Card Title</div>
-          <div class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
-        </a>
-
-        <div class="alert alert-primary">
-          This is Alert. Lorem Ipsum.
-        </div>
-        <div class="alert alert-secondary">
-          This is Alert. Lorem Ipsum.
-        </div>
-        <div class="alert alert-success">
-          This is Alert. Lorem Ipsum.
-        </div>
-        <div class="alert alert-danger">
-          This is Alert. Lorem Ipsum.
-        </div>
-        <div class="alert alert-warning">
-          This is Alert. Lorem Ipsum.
-        </div>
-        
-        <h3>Heading H3</h3>
-        <h4>Heading H4</h4>
-        <h5>Heading H5</h5>
-        <h6>Heading H6</h6>
-
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-          ratione deleniti tempora excepturi hic qui ipsum placeat aperiam
-          provident quo aspernatur ut velit similique autem quia saepe,
-          consequuntur maiores minima. <a href="">This is link.</a>
-        </p>
-        <button class="btn btn-secondary">This is button.</button>
-        <button class="btn btn-success">This is button.</button>
-        <button class="btn btn-warning">This is button.</button>
-      </section>
-      <button class="btn btn-danger">This is button.</button>
     </main>
     <footer class="footer">
       <div class="copyright">Copyright 2023 Mimi Tech</div>
